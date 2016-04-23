@@ -1,0 +1,9 @@
+
+# set source paths for bootstrap phase
+export REV_SOURCE_PATH=lib/rev/lib/torque/src:lib/analyzer/src:lib/reader/src:lib/io/src/:lib/compiler/src
+
+OS=`uname`
+ARCH=`uname -m`
+
+# set path to include architecture directory
+export PATH=$PATH:"$PWD/target/$OS-$ARCH/bin"
