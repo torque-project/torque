@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+cd "${TORQUE_DIR}"
+make
+. activate
+export LD_LIBRARY_PATH=/usr/local/lib
+if [ -n "$TORQUE_TEST" ]; then
+    echo "running booti with test script"
+    booti <<EOF
+(ns test (:require [torque.compiler :as c]))
+(c/eval '(torque.core.builtin/+ 1 2))
+EOF
+else
+    echo "starting booti repl"
+    booti
+fi
