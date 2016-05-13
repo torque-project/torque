@@ -1,0 +1,24 @@
+#!/bin/bash
+. activate
+require_str=
+if [ $# -eq 0 ]; then
+    namespaces=()
+    for path in ${REV_SOURCE_PATH//:/ }; do
+        drop=$((${#path}+1))
+        for ns in `find ${path} -name "*_test.trq"`; do
+            file=${ns:${drop}}
+            no_ext=${file%.trq}
+            ns=`echo $no_ext | tr '/' '.' | tr '_' "-"`
+            namespaces+=($ns)
+        done
+    done
+else
+    namespaces=($*)
+fi
+for ns in ${namespaces[@]}; do
+    require_str="${require_str} [${ns}]"
+done
+booti <<EOF
+(ns testing (:require [torque.test :as t] ${require_str}))
+(t/run-all-tests)
+EOF
