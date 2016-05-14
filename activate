@@ -1,6 +1,6 @@
 
 # set source paths for bootstrap phase
-export REV_SOURCE_PATH=lib/rev/lib/torque/src:lib/analyzer/src:lib/reader/src:lib/io/src/:lib/compiler/src
+export REV_SOURCE_PATH=lib/core/src:lib/analyzer/src:lib/reader/src:lib/io/src/:lib/compiler/src
 
 OS=`uname`
 ARCH=`uname -m`

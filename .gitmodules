@@ -21,3 +21,7 @@
 	path = lib/compiler
 	url = https://github.com/torque-project/torque.compiler
 	branch = develop
+[submodule "lib/core"]
+	path = lib/core
+	url = https://github.com/torque-project/torque.core
+	branch = develop
