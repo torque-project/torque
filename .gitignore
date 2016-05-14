@@ -1,12 +1,2 @@
-pom.xml
-pom.xml.asc
-*jar
-/lib/
-/classes/
 /target/
-/checkouts/
-.lein-deps-sum
-.lein-repl-history
-.lein-plugins/
-.lein-failures
-.nrepl-port
+/.repl_history
