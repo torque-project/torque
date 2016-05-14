@@ -1,4 +1,6 @@
 #!/bin/bash
+set -eu
+make
 . activate
 require_str=
 if [ $# -eq 0 ]; then
