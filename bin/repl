@@ -1,0 +1,19 @@
+#!/usr/bin/env booti
+
+(ns repl
+  (:require
+   [torque.compiler :as c]
+   [torque.ffi :as ffi]
+   [torque.reader :as rdr]))
+
+(def rl (ffi/so "readline"))
+
+(ffi/defimport readline rl readline :string [:string])
+
+(c/compile-ns 'torque.core)
+
+(loop []
+  (let [line (readline "> ")]
+    (when-not (or (nil? line) (= (count line) 0))
+      (print (c/eval (rdr/read (rdr/io-stream (bytes line)))))))
+  (recur))
