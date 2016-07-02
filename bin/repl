@@ -9,11 +9,22 @@
 (def rl (ffi/so "readline"))
 
 (ffi/defimport readline rl readline :string [:string])
+(ffi/defimport read-history rl read_history :void [:string])
+(ffi/defimport write-history rl write_history :void [:string])
+(ffi/defimport add-history rl add_history :void [:string])
 
+(def history-file ".repl_history")
+
+(println "Bootstrapping torque.core")
 (c/compile-ns 'torque.core)
+(println "Happy coding...")
+
+(read-history history-file)
 
 (loop []
   (let [line (readline "> ")]
     (when-not (or (nil? line) (= (count line) 0))
+      (add-history line)
+      (write-history history-file)
       (print (c/eval (rdr/read (rdr/io-stream (bytes line)))))))
   (recur))
