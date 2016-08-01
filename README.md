@@ -10,9 +10,9 @@ main entry point to clone and build the project.
 The toolchain currently works on Ubuntu and OS X. Make sure that LLVM 4.0 is
 installed from either the llvm debian repository or via homebrew on OS X.
 
-Then clone this reposity with the *--revusrive* flag. 
+Then clone this reposity with the *--recursive* flag. 
 
-    git clone --resurive -b develop git@github.com:torque-project/torque.git
+    git clone --recursive -b develop git@github.com:torque-project/torque.git
     
 This will clone all dependencies of this project. Next, we need to build the
 libffi version in lib/rev/lib/libffi. This is required since the version in
