@@ -24,7 +24,8 @@
 (read-history history-file)
 
 (loop []
-  (let [line (readline "> ")]
+  (let [ns   (c/current-ns)
+        line (readline (str (name ns) "> "))]
     (when-not (or (nil? line) (= (count line) 0))
       (add-history line)
       (write-history history-file)
