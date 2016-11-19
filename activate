@@ -7,3 +7,8 @@ ARCH=`uname -m`
 
 # set path to include architecture directory
 export PATH=$PATH:"$PWD/target/$OS-$ARCH/bin"
+
+# set library path to target folder
+export TRQ_OS=$(uname -s)
+export TRQ_ARCH=$(uname -m)
+export LD_LIBRARY_PATH=target/"$TRQ_OS"-"$TRQ_ARCH"/lib:$LD_LIBRARY_PATH
