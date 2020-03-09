@@ -19,6 +19,7 @@
 (println "Active features:" features)
 (println "Bootstrapping torque.core")
 (rdr/with-features features (c/compile-ns 'torque.core))
+(c/refer-core 'user)
 (println "Happy coding...")
 
 (read-history history-file)
