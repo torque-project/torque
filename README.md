@@ -24,7 +24,7 @@ actual merits of that seem thin to me.
 
 ## Build
 
-The toolchain currently works on Ubuntu and OS X. Make sure that LLVM 4.0 is
+The toolchain currently works on Ubuntu and OS X. Make sure that LLVM 7.0+ is
 installed from either the llvm debian repository or via homebrew on OS X.
 
 Then clone this reposity with the *--recursive* flag. 
