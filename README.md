@@ -47,7 +47,7 @@ This will bootstrap the compiler and start a LLVM compiled REPL. The repl curren
 doesn't cache the result of the bootstrapping process, so the REPL start time is 
 currently a couple of seconds long on each run.
 
-## Current Work
+## Current Objectives
 
 I'm currently in the process of updating this project. The original version didn't feature
 garbage collection, since I wanted to write a sytem that doesn't rely on this. Rusts borrow 
