@@ -12,7 +12,7 @@ compile a simple ClojureScript application. In general this goal was met. The to
 compiler currently manages to compile the c++ boot strap code in <8s on my mac book,
 interprets the clojure.core code, and compiler once, and then starts a repl, which
 in turn compiles the clojure core code. The boot strapping process until a repl
-is available currently takes less than 10 second.
+is available currently takes less than 10 seconds.
 
 Besides this purely "for fun" goal, the theory behind the project was that a single 
 compiler that targets different back ends would have worked better than Clojure's
