@@ -47,6 +47,17 @@ This will bootstrap the compiler and start a LLVM compiled REPL. The repl curren
 doesn't cache the result of the bootstrapping process, so the REPL start time is 
 currently a couple of seconds long on each run.
 
+## Sub Projects
+
+The code base is split up into several sub projects, providing the core libraries, I/O,
+compiler infrastructure.
+
+* https://github.com/torque-project/torque.core
+* https://github.com/torque-project/torque.reader
+* https://github.com/torque-project/torque.analyzer
+* https://github.com/torque-project/torque.compiler
+* https://github.com/torque-project/torque.io
+
 ## Current Objectives
 
 I'm currently in the process of updating this project. The original version didn't feature
