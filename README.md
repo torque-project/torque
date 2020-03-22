@@ -50,7 +50,7 @@ currently a couple of seconds long on each run.
 ## Sub Projects
 
 The code base is split up into several sub projects, providing the core libraries, I/O,
-compiler infrastructure.
+and compiler infrastructure.
 
 * https://github.com/torque-project/torque.core
 * https://github.com/torque-project/torque.reader
