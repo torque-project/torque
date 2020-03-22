@@ -18,9 +18,8 @@ Besides this purely "for fun" goal, the theory behind the project was that a sin
 compiler that targets different back ends would have worked better than Clojure's
 current approach, of hosting the language of different platforms. Especially 
 considering the possibility to target web assembly, or GPUs using LLVM, makes using
-LLVM attractive. Clojure's initial goal to support the JVM as a host platform could
-have easily been supported by hosting a JVM within a compiled process, even though the 
-actual merits of that seem thin to me.
+LLVM attractive. Clojure's initial goal to support interaction with the JVM could
+have easily been supported once compilation to llvm byte code works.
 
 ## Build
 
