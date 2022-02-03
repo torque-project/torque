@@ -24,7 +24,7 @@ have easily been supported once compilation to llvm byte code works.
 Fun things this might do in the future. 
 
 * Compile Clojure to GPU code. 
-* Compile Clojure to Web Assembly vis LLVM.
+* Compile Clojure to Web Assembly via LLVM.
 * Interface with Java via JNI.
 
 ## Build
