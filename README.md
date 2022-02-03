@@ -21,6 +21,12 @@ considering the possibility to target web assembly, or GPUs using LLVM, makes us
 LLVM attractive. Clojure's initial goal to support interaction with the JVM could
 have easily been supported once compilation to llvm byte code works.
 
+Fun things this might do in the future. 
+
+* Compile Clojure to GPU code. 
+* Compile Clojure to Web Assembly vis LLVM.
+* Interface with Java via JNI.
+
 ## Build
 
 The toolchain currently works on Ubuntu and OS X. Make sure that LLVM 7.0+ is
