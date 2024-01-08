@@ -2,8 +2,8 @@
 # set source paths for bootstrap phase
 export REV_SOURCE_PATH=lib/core/src:lib/analyzer/src:lib/reader/src:lib/io/src/:lib/compiler/src
 
-OS=`uname`
-ARCH=`uname -m`
+OS=`uname -s`
+ARCH=`uname -p`
 
 # set path to include architecture directory
 export PATH=$PATH:"$PWD/target/$OS-$ARCH/bin"
@@ -11,4 +11,4 @@ export PATH=$PATH:"$PWD/target/$OS-$ARCH/bin"
 # set library path to target folder
 export TRQ_OS=$(uname -s)
 export TRQ_ARCH=$(uname -m)
-export LD_LIBRARY_PATH=target/"$TRQ_OS"-"$TRQ_ARCH"/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/homebrew/opt/llvm@15/lib/:target/"$TRQ_OS"-"$TRQ_ARCH"/lib:$LD_LIBRARY_PATH
