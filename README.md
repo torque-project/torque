@@ -27,9 +27,18 @@ Fun things this might do in the future.
 * Compile Clojure to Web Assembly via LLVM.
 * Interface with Java via JNI.
 
+## Quick Start
+
+If you don't want to build the project yourself by hand, you can just run
+
+    docker build . -t torque/demo
+    docker run --rm -it --entrypoint /bin/zsh torque/demo
+
+in the project root to get a docker container with a built torque environment.
+
 ## Build
 
-The toolchain currently works on Ubuntu and OS X. Make sure that LLVM 7.0+ is
+The toolchain currently works on Ubuntu and OS X. Make sure that LLVM 18.0+ is
 installed from either the llvm debian repository or via homebrew on OS X.
 
 Then clone this reposity with the *--recursive* flag. 
@@ -41,11 +50,20 @@ libffi version in lib/rev/lib/libffi. This is required since the version in
 homebrew and the ubuntu repository is outdated. Install libffi to an appropriate
 location like /usr/local.
 
+Next, we need to set some environment variables for the build, and later running
+a repl.
+
+    . ./activate
+
+On platforms, other than Mac, with homebrew, you need to provide the path to
+the LLVM installation, if this isn't simply installed in the search path.
+
+    export LLVM_PATH=/opt/llvm/18.0.0/
+
 After that simply run make in the project root. Once this is done you should
 source the *activate* script found in the project root. Now, simply run the
 repl script in the bin folder.
 
-    . ./activate
     bin/repl
     
 This will bootstrap the compiler and start a LLVM compiled REPL. The repl currently
