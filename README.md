@@ -43,7 +43,11 @@ in the project root to get a docker container with a built torque environment.
 will get you into a repl that compiles to native code. Note that the
 repl has to get bootstrapped every time right now, it might take a 
 couple of seconds, since all of `clojure.core` has to be compiled on
-each startup.
+each startup. From here on, you can use the repl, like you normally would
+in Clojure.
+
+    user> (+ 1 1)
+    user> 2
 
 ## Build
 
