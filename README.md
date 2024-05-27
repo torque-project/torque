@@ -36,9 +36,7 @@ If you don't want to build the project yourself by hand, you can just run
 
 in the project root to get a docker container with a built torque environment.
 
-    cd torque
-    . ./activate
-    target/Linux_unknown/bin/booti bin/repl
+    repl
 
 will get you into a repl that compiles to native code. Note that the
 repl has to get bootstrapped every time right now, it might take a 
