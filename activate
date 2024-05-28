@@ -6,7 +6,7 @@ OS=`uname -s`
 ARCH=`uname -p`
 
 # set path to include architecture directory
-export PATH=$PATH:"$PWD/target/$OS-$ARCH/bin"
+export PATH=$PATH:"$PWD/target/$OS-$ARCH/bin:$PWD/bin"
 
 # set library path to target folder
 export TRQ_OS=$(uname -s)
@@ -24,5 +24,5 @@ if [ "$LLVM_PATH" = "Darwin" ]; then
     export LLVM_PATH=$(brew --prefix llvm@18)
   fi
 
-  export DYLD_LIBRARY_PATH=$LLVM_PATH/lib:target/Darwin-arm/lib
+  export DYLD_LIBRARY_PATH=$LLVM_PATH/lib:$PWD/target/Darwin-arm/lib
 fi

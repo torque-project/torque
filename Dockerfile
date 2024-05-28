@@ -11,9 +11,7 @@ RUN ln -s /usr/lib/libLLVM-18.so /usr/lib/libLLVM.so
 WORKDIR /torque
 COPY . .
 
-# RUN cd lib/rev/lib/libffi && ./configure && make
-
-RUN LLVM_PATH="/usr/lib/llvm18" make
+RUN LLVM_PATH="/usr/lib/llvm18" make -j$(nproc --all)
 
 FROM alpine:3.20.0
 
@@ -22,6 +20,8 @@ RUN apk add --no-cache libstdc++ libffi llvm18 llvm18-libs readline zsh
 
 RUN ln -s /usr/lib/libLLVM-18.so /usr/lib/libLLVM.so
 RUN ln -s /usr/lib/libreadline.so.8 /usr/lib/libreadline.so
+
+RUN echo "cd /torque && source /torque/activate" >> ~/.zshrc
 
 COPY --from=build ./torque ./torque
 
