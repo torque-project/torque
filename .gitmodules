@@ -1,0 +1,27 @@
+[submodule "build"]
+	path = build
+	url = https://github.com/jkrueger/nrm.git
+	branch = develop
+[submodule "lib/rev"]
+	path = lib/rev
+	url = https://github.com/torque-project/rev
+[submodule "lib/io"]
+	path = lib/io
+	url = https://github.com/torque-project/torque.io
+	branch = develop
+[submodule "lib/reader"]
+	path = lib/reader
+	url = https://github.com/torque-project/torque.reader
+	branch = develop
+[submodule "lib/analyzer"]
+	path = lib/analyzer
+	url = https://github.com/torque-project/torque.analyzer
+	branch = develop
+[submodule "lib/compiler"]
+	path = lib/compiler
+	url = https://github.com/torque-project/torque.compiler
+	branch = develop
+[submodule "lib/core"]
+	path = lib/core
+	url = https://github.com/torque-project/torque.core
+	branch = develop

@@ -1,0 +1,35 @@
+#!/usr/bin/env booti
+
+(ns repl
+  (:require
+   [torque.compiler :as c]
+   [torque.ffi :as ffi]
+   [torque.reader :as rdr]))
+
+(def rl (ffi/so "readline"))
+
+(ffi/defimport readline rl readline :string [:string])
+(ffi/defimport read-history rl read_history :void [:string])
+(ffi/defimport write-history rl write_history :void [:string])
+(ffi/defimport add-history rl add_history :void [:string])
+
+(def history-file ".repl_history")
+(def features     (c/platform-features))
+
+(println "Active features:" features)
+(println "Bootstrapping torque.core")
+(rdr/with-features features (c/compile-ns 'torque.core))
+(c/refer-core 'user)
+(println "Happy coding...")
+
+(read-history history-file)
+
+(loop []
+  (let [ns   (c/current-ns)
+        line (readline (str (name ns) "> "))]
+    (when-not (or (nil? line) (= (count line) 0))
+      (add-history line)
+      (write-history history-file)
+      (rdr/with-features features
+        (print (c/eval (rdr/read (rdr/io-stream (bytes line))))))))
+  (recur))
