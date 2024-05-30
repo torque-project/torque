@@ -8,19 +8,12 @@ ARCH=`uname -p`
 # set path to include architecture directory
 export PATH=$PATH:"$PWD/target/$OS-$ARCH/bin:$PWD/bin"
 
-# set library path to target folder
-export TRQ_OS=$(uname -s)
-export TRQ_ARCH=$(uname -m)
-
-# export LD_LIBRARY_PATH=/opt/homebrew/opt/llvm@15/lib/:target/"$TRQ_OS"-"$TRQ_ARCH"/lib:$LD_LIBRARY_PATH
-# export LD_LIBRARY_PATH=/Users/jan/Code/fun/llvm/llvm/build/lib/:target/"$TRQ_OS"-"$TRQ_ARCH"/lib:$LD_LIBRARY_PATH
-#
-
-if [ "$LLVM_PATH" = "Darwin" ]; then
+if [ "$OS" = "Darwin" ]; then
   if ! [ -x $(command -v brew &> /dev/null) ];
   then
     echo "homebrew could not be found. if you don't want to install dependencies via homebrew, you have to build llvm and readline yourself, and set LLVM_PATH yourself."
   else
+    echo TEST
     export LLVM_PATH=$(brew --prefix llvm@18)
   fi
 
