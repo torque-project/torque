@@ -54,7 +54,7 @@ installed from either the llvm debian repository or via homebrew on OS X.
 
 Then clone this reposity with the *--recursive* flag. 
 
-    git clone --recursive -b develop git@github.com:torque-project/torque.git
+    git clone --recursive -b main git@github.com:torque-project/torque.git
     
 This will clone all dependencies of this project. Next, we need to build the
 libffi version in lib/rev/lib/libffi. This is required since the version in
